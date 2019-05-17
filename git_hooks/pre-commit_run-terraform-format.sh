@@ -41,7 +41,7 @@ if [ ${exit_code} -eq ${SUCCESS} ]; then
             terraform fmt -check=true ${this_dirname} > /dev/null 2>&1
 
             if [ ${?} -ne ${SUCCESS} ]; then
-                echo "    PROBLEM(S) FOUND:  The command \"terraform fmt \"${this_dirname}\" exited non-zero" >&2
+                echo "    PROBLEM(S) FOUND:  The command \"terraform fmt '${this_dirname}'\" exited non-zero" >&2
                 let exit_code=${exit_code}+1
             fi
     
