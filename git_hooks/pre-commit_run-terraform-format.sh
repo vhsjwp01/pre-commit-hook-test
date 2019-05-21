@@ -9,6 +9,8 @@ exit_code=${SUCCESS}
 
 x_wing_fighter=":=8o8=:"
 
+# DESCRIPTION: A script to run 'terraform fmt -check=true' against .TF files
+
 # WHAT: Figure out the filenames in our commit payload
 # WHY:  We want to find out if any of them are terraform files
 #
@@ -41,7 +43,7 @@ if [ ${exit_code} -eq ${SUCCESS} ]; then
             terraform fmt -check=true ${this_dirname} > /dev/null 2>&1
 
             if [ ${?} -ne ${SUCCESS} ]; then
-                echo "    PROBLEM(S) FOUND:  The command \"terraform fmt '${this_dirname}'\" exited non-zero" >&2
+                echo "    PROBLEM(S) FOUND:  terraform fmt exited non-zero" >&2
                 let exit_code=${exit_code}+1
             fi
     

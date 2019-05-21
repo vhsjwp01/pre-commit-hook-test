@@ -7,6 +7,8 @@ ERROR=1
 err_msg=""
 exit_code=${SUCCESS}
 
+# DESCRIPTION: A script to ensure yaml references to certificate expiry dates are in the future
+
 # WHAT: Figure out the filenames in our commit payload
 # WHY:  We want to find out if any of them are YAML files
 #
